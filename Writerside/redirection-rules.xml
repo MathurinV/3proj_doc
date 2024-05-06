@@ -18,4 +18,20 @@
         <description>Created after removal of "This is the first topic" from Help Instance</description>
         <accepts>Default-topic.html</accepts>
     </rule>
+    <rule id="7990ef27">
+        <description>Created after removal of "Section Starting Page" from Help Instance</description>
+        <accepts>Section-Starting-Page.html</accepts>
+    </rule>
+    <rule id="a98bbbd">
+        <description>Created after removal of "Empty MD Topic" from Help Instance</description>
+        <accepts>Empty-MD-Topic.html</accepts>
+    </rule>
+    <rule id="231bac44">
+        <description>Created after removal of "Reference" from Help Instance</description>
+        <accepts>Reference.html</accepts>
+    </rule>
+    <rule id="737f0c40">
+        <description>Created after removal of "Account-page" from Help Instance</description>
+        <accepts>Overview.html</accepts>
+    </rule>
 </rules>
