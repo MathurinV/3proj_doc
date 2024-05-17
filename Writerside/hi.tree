@@ -21,4 +21,9 @@
             <toc-element topic="Groupe-Page.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="FRONT-MOBILE-HOME.md">
+        <toc-element topic="Installation.md"/>
+        <toc-element topic="References-and-libraries.md"/>
+        <toc-element topic="Pages-Mobile.md"/>
+    </toc-element>
 </instance-profile>
