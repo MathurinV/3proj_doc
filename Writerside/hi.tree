@@ -24,6 +24,14 @@
     <toc-element topic="FRONT-MOBILE-HOME.md">
         <toc-element topic="Installation.md"/>
         <toc-element topic="References-and-libraries.md"/>
-        <toc-element topic="Pages-Mobile.md"/>
+        <toc-element topic="Screens-Mobile.md">
+            <toc-element topic="Login-Screen.md"/>
+            <toc-element topic="Register-screen.md"/>
+            <toc-element topic="Home-Screen.md"/>
+            <toc-element topic="Stats-Screen.md"/>
+            <toc-element topic="Group-Details-Screen.md"/>
+            <toc-element topic="User-Details-Screen.md"/>
+            <toc-element topic="Expense-Details-Screen.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>

@@ -1,4 +1,4 @@
-# FRONT MOBILE HOME
+# FRONT MOBILE
 
 This is the documentation page for the MOBILE APP of the 3PROJ project made with Android Compose (Kotlin)
 
@@ -9,5 +9,5 @@ This is the documentation page for the MOBILE APP of the 3PROJ project made with
 
 This app documentation is divided by the following : 
 - <a href="Installation.md"> Installation </a>
-- <a href="Pages-Mobile.md"> Pages </a>
+- <a href="Screens-Mobile.md"> Pages </a>
 - <a href="References-and-libraries.md"> References, third party code and libraries</a>

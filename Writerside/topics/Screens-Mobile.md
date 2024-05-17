@@ -1,4 +1,4 @@
-# Pages_Mobile
+# Screens
 
 
 The Following Flowchart is detailing the organization of the app pages :
