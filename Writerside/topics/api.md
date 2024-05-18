@@ -87,6 +87,16 @@ Which will return a list of users with their ids.
 
 </tab>
 <tab title="FluentFTP 49">
-A FTP client library for .NET, used to interact with the <a href="ftp.md">ftp</a> service.
+A FTP client library for .NET, used to interact with the <a href="ftp.md">ftp</a> service. Every file type uploaded to the API uses a different user account to limit the attack surface.
+</tab>
+<tab title="QuestPDF">
+The api uses <a href="https://www.questpdf.com/getting-started.html">QuestPDF</a> to generate the various pdf files to be distributed to the clients. This library is open-sourced and is easily mastered.
+</tab>
+<tab title="PayPal">
+The <a href="https://developer.paypal.com/home">paypal API</a> is used to create transactions from user to user. An API key is provided to access the paypal api.
 </tab>
 </tabs>
+
+## Testing
+
+The `api` can be tested using dotnet [testing tools](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test). The testing environment uses Bogus 35.5.0 C# library to generate fake data. At this moment, the dotnet testing is also used to populate the database with fake data. 
