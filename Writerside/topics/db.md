@@ -7,130 +7,140 @@ The database service is created using postgres version 16.2. It is used to store
     Here is the Mermaid diagram for the database:
     <code-block lang="mermaid">
         classDiagram
-        direction BT
-        class DataProtectionKeys {
-           text FriendlyName
-           text Xml
-           integer Id
-        }
-        class Expenses {
-           uuid GroupId
-           numeric Amount
-           varchar(255) Description
-           timestamp with time zone CreatedAt
-           uuid CreatedById
-           integer JustificationExtension
-           uuid Id
-        }
-        class GroupMessages {
-           uuid SenderId
-           uuid GroupId
-           text Content
-           timestamp with time zone SentAt
-           uuid Id
-        }
-        class Groups {
-           varchar(50) Name
-           varchar(50) Description
-           varchar(50) Image
-           uuid OwnerId
-           uuid Id
-        }
-        class Invitations {
-           timestamp with time zone InvitedAt
-           uuid GroupId
-           uuid UserId
-        }
-        class Messages {
-           uuid SenderId
-           uuid ReceiverId
-           text Content
-           timestamp with time zone SentAt
-           uuid Id
-        }
-        class RoleClaims {
-           uuid RoleId
-           text ClaimType
-           text ClaimValue
-           integer Id
-        }
-        class Roles {
-           varchar(256) Name
-           varchar(256) NormalizedName
-           text ConcurrencyStamp
-           uuid Id
-        }
-        class UserClaims {
-           uuid UserId
-           text ClaimType
-           text ClaimValue
-           integer Id
-        }
-        class UserExpenses {
-           numeric Amount
-           timestamp with time zone PaidAt
-           uuid ExpenseId
-           uuid UserId
-        }
-        class UserGroups {
-           timestamp with time zone JoinedAt
-           uuid UserId
-           uuid GroupId
-        }
-        class UserLogins {
-           text ProviderDisplayName
-           uuid UserId
-           text LoginProvider
-           text ProviderKey
-        }
-        class UserRoles {
-           uuid UserId
-           uuid RoleId
-        }
-        class UserTokens {
-           text Value
-           uuid UserId
-           text LoginProvider
-           text Name
-        }
-        class Users {
-           numeric Balance
-           integer AvatarExtension
-           varchar(256) UserName
-           varchar(256) NormalizedUserName
-           varchar(256) Email
-           varchar(256) NormalizedEmail
-           boolean EmailConfirmed
-           text PasswordHash
-           text SecurityStamp
-           text ConcurrencyStamp
-           text PhoneNumber
-           boolean PhoneNumberConfirmed
-           boolean TwoFactorEnabled
-           timestamp with time zone LockoutEnd
-           boolean LockoutEnabled
-           integer AccessFailedCount
-           uuid Id
-        }
-        Expenses  -->  Groups : GroupId
-        Expenses  -->  Users : CreatedById
-        GroupMessages  -->  Groups : GroupId
-        GroupMessages  -->  Users : SenderId
-        Groups  -->  Users : OwnerId
-        Invitations  -->  Groups : GroupId
-        Invitations  -->  Users : UserId
-        Messages  -->  Users : SenderId
-        Messages  -->  Users : ReceiverId
-        RoleClaims  -->  Roles : RoleId
-        UserClaims  -->  Users : UserId
-        UserExpenses  -->  Expenses : ExpenseId
-        UserExpenses  -->  Users : UserId
-        UserGroups  -->  Groups : GroupId
-        UserGroups  -->  Users : UserId
-        UserLogins  -->  Users : UserId
-        UserRoles  -->  Roles : RoleId
-        UserRoles  -->  Users : UserId
-        UserTokens  -->  Users : UserId
+    direction BT
+    class DataProtectionKeys {
+       text FriendlyName
+       text Xml
+       integer Id
+    }
+    class Expenses {
+       uuid GroupId
+       numeric Amount
+       varchar(255) Description
+       timestamp with time zone CreatedAt
+       uuid CreatedById
+       integer JustificationExtension
+       integer ExpenseType
+       uuid Id
+    }
+    class GroupMessages {
+       uuid SenderId
+       uuid GroupId
+       varchar(1000) Content
+       timestamp with time zone SentAt
+       uuid Id
+    }
+    class Groups {
+       varchar(255) Name
+       varchar(255) Description
+       uuid OwnerId
+       integer ImageExtension
+       uuid Id
+    }
+    class Invitations {
+       timestamp with time zone InvitedAt
+       uuid GroupId
+       uuid UserId
+    }
+    class Messages {
+       uuid SenderId
+       uuid ReceiverId
+       varchar(1000) Content
+       timestamp with time zone SentAt
+       uuid Id
+    }
+    class PayDueTos {
+       numeric AmountToPay
+       uuid PayToUserId
+       uuid UserId
+       uuid GroupId
+    }
+    class RoleClaims {
+       uuid RoleId
+       text ClaimType
+       text ClaimValue
+       integer Id
+    }
+    class Roles {
+       varchar(256) Name
+       varchar(256) NormalizedName
+       text ConcurrencyStamp
+       uuid Id
+    }
+    class UserClaims {
+       uuid UserId
+       text ClaimType
+       text ClaimValue
+       integer Id
+    }
+    class UserExpenses {
+       numeric Amount
+       timestamp with time zone PaidAt
+       uuid ExpenseId
+       uuid UserId
+    }
+    class UserGroups {
+       timestamp with time zone JoinedAt
+       numeric Balance
+       uuid UserId
+       uuid GroupId
+    }
+    class UserLogins {
+       text ProviderDisplayName
+       uuid UserId
+       text LoginProvider
+       text ProviderKey
+    }
+    class UserRoles {
+       uuid UserId
+       uuid RoleId
+    }
+    class UserTokens {
+       text Value
+       uuid UserId
+       text LoginProvider
+       text Name
+    }
+    class Users {
+       integer AvatarExtension
+       integer RibExtension
+       varchar(256) UserName
+       varchar(256) NormalizedUserName
+       varchar(256) Email
+       varchar(256) NormalizedEmail
+       boolean EmailConfirmed
+       text PasswordHash
+       text SecurityStamp
+       text ConcurrencyStamp
+       text PhoneNumber
+       boolean PhoneNumberConfirmed
+       boolean TwoFactorEnabled
+       timestamp with time zone LockoutEnd
+       boolean LockoutEnabled
+       integer AccessFailedCount
+       uuid Id
+    }
+    Expenses  -->  Groups : GroupId
+    Expenses  -->  Users : CreatedById
+    GroupMessages  -->  Groups : GroupId
+    GroupMessages  -->  Users : SenderId
+    Groups  -->  Users : OwnerId
+    Invitations  -->  Groups : GroupId
+    Invitations  -->  Users : UserId
+    Messages  -->  Users : ReceiverId
+    Messages  -->  Users : SenderId
+    PayDueTos  -->  UserGroups : UserId, GroupId
+    PayDueTos  -->  Users : PayToUserId
+    RoleClaims  -->  Roles : RoleId
+    UserClaims  -->  Users : UserId
+    UserExpenses  -->  Expenses : ExpenseId
+    UserExpenses  -->  Users : UserId
+    UserGroups  -->  Groups : GroupId
+    UserGroups  -->  Users : UserId
+    UserLogins  -->  Users : UserId
+    UserRoles  -->  Roles : RoleId
+    UserRoles  -->  Users : UserId
+    UserTokens  -->  Users : UserId
     </code-block>
 </tab>
 <tab title="Configuration">
