@@ -6,6 +6,7 @@
                  name="MoneyMinder Documentation"
                  start-page="BACK-HOME.md">
 
+    <toc-element topic="HOME.md"/>
     <toc-element topic="BACK-HOME.md">
         <toc-element topic="api.md"/>
         <toc-element topic="db.md"/>
