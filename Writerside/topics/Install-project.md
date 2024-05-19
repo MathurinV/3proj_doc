@@ -1,9 +1,6 @@
 # Installation
 
-A How-to article is an action-oriented type of document.
-It explains how to perform a specific task or solve a problem, and usually contains a sequence of steps.
-Start with a short introductory paragraph that explains what users will accomplish by following this procedure,
-what they need to perform it for, or define the target audience of the doc.
+This topic provides information on how to install the project.
 
 > **Important information**
 >
@@ -27,9 +24,9 @@ Make sure that:
 npm install
 ```
 
-2. Step with a [link](https://www.jetbrains.com)
+2. Build the project with the following command:
 
-3. Step with a list.
-   - List item
-   - List item
-   - List item
+```bash
+npm run serve
+```
+
