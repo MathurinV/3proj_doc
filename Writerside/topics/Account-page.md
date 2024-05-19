@@ -21,8 +21,9 @@ The account page is divided into two main sections: profile management and group
 ### Profile Management
 
 - **Profile Picture**: Users can upload a profile picture or change their existing profile picture.
+- **Upload RIB**: Users can upload a RIB to receive refunds.
 - **Username**: Users can view and update their username.
-- **Email Address**: Users can view their email address, which is displayed in read-only mode.
+- **Email Address**: Users can view and update their email address.
 
 ### Group Management
 

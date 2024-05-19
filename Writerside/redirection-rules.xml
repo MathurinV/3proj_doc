@@ -34,4 +34,8 @@
         <description>Created after removal of "Account-page" from Help Instance</description>
         <accepts>Overview.html</accepts>
     </rule>
+    <rule id="38f82376">
+        <description>Created after removal of "General documentation" from MoneyMinder Documentation</description>
+        <accepts>General-documentation.html</accepts>
+    </rule>
 </rules>
