@@ -10,10 +10,12 @@ Top of the screen is containing main infos, and menus, such as :
 
 Below, the main group infos are shown : image, name.
 
-It's divided in two pages with the first one showing the expenses of the group and having a `Button()` at the bottom to add an expense
+It's divided in three pages with the first one showing the expenses of the group and having a `Button()` at the bottom to add an expense
 expenses of the group are shown as clickable cards and leads to <a href="Expense-Details-Screen.md"> Expense details </a>
 
-The other page is showing the diagram of the group balance (users of the group)
+The second page is showing the diagram of the group balance (users of the group)
+
+The last page is showing the chat between users of the group
 
 See images for more info
 
@@ -39,3 +41,6 @@ See images for more info
 
 <p> Balance Graph</p>
 <img src="balance_graph.png" alt="balance graph image"/>
+
+<p>Chat page</p>
+<img src="group_messages.png" alt="chat page image"/>
